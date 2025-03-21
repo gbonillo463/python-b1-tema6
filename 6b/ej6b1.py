@@ -61,13 +61,26 @@ Nota: Verifiqueu que el fitxer de logs s'hagi creat.
 import logging
 
 def count_letters(names):
-    #Write your code here
-    pass
+    letter_counter ={}
+    # Para cada palabra de la lista...
+    for name in names:
+        # Para cada letra de la palabra...
+        for letter in name:
+            # Si no existe en el dict. la agrego , si existe le sumo.
+            if letter in letter_counter:
+                letter_counter[letter] = letter_counter[letter] + 1
+            else:
+                letter_counter[letter] = 1
+    # retorno el diccionario
+    return letter_counter
 
 
 def create_log(names):
-    #Write your code here
-    pass
+    # Configuro el logging: fichero de slida y el nivel de log.
+    logging.basicConfig(level=logging.DEBUG, filename="production.log",)
+    letter_counter = count_letters(names)
+    # Escribo a log.
+    logging.debug(f"Letter counts: {letter_counter}")
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script

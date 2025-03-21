@@ -76,14 +76,20 @@ Exemple:
 
 
 def read_txt_file(path: str) -> str:
-    #Write your code here
-    pass
+    text = ""
+    # Abrimos fichero y leemos.
+    with open(path, "r",  encoding="utf-8") as r_file:
+        text = r_file.read()
+    return text
 
 
 def words_counter(text: str, word: str) -> int:
-    #Write your code here
-    pass
-
+    """
+    MUY importante, normalizar el texto. SIempre usarmos lower case para el texto y para la word"
+    Split nos servirá para cortar el texto en palabras ya que el separator es ' '
+    Count es un método de lista que nos devuelve las veces que está ese nodo.
+    """
+    return text.lower().split().count(word.lower())
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script

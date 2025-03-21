@@ -69,13 +69,29 @@ from nltk.sentiment import SentimentIntensityAnalyzer
 
 nltk.download("vader_lexicon")
 
-def sentiment_analysis(text):
-    #Write your code here
-    pass
 
+def sentiment_analysis(text):
+    # Instanciamos el analizador.
+    sid = SentimentIntensityAnalyzer()
+    # Le pasamos el texto
+    scores = sid.polarity_scores(text)
+    # Nos quedamos con el compound
+    final_score = scores["compound"]
+    # Check los limites
+    if final_score > 0.05:
+        return "Positive"
+    elif final_score >= -0.05:
+        return "Neutral"
+    else:
+        return "Negative"
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
 
 # text = "This product is okay."
 # print(sentiment_analysis(text))
+
+# print(sentiment_analysis("I love this product!"))
+# print(sentiment_analysis("This product is terrible."))
+# print(sentiment_analysis("This product is okay."))
+# print(sentiment_analysis("I don't know what to think about this product."))
