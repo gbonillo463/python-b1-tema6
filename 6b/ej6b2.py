@@ -50,22 +50,13 @@ from typing import List
     
 def average_of_even_numbers(numbers):
     #Find the error and rewrite the correct code.
-    # Total se ha de inicializar a 0, no a -1
-    total = 0
+    total = -1
     count = 0
-    average = 0
     for num in numbers:
         if num % 2 == 0:
             total += num
-            # SUmamos uno a count SOLO si es un numero par
-            count += 1
-    # Si no hay numeros pares, devolvemos 0.
-    try:
-        average = total / count
-    except ZeroDivisionError: 
-        average = 0
-    # Se ha de retornar el average
-    return average
+        count += 1
+    return total
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
