@@ -1,5 +1,5 @@
 """
-Enunciado:
+Enunciado: 
 Implementa dos funciones: 'count_letters(names)' y 'create_log(names)'.
 En primer lugar, utilizando la librería logging, implementa una función 
 'count_letters(names)' que recibe como parámetro 'names' que es una lista de 
