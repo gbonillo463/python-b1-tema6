@@ -34,9 +34,10 @@ def average_of_even_numbers(numbers):
         if num % 2 == 0:
             total += num
             count += 1
-    if total == 0:
+    if count == 0:
         return 0
-    return round(total / count, 2)
+    else:
+        return round(total / count, 2)
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
