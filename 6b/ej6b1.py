@@ -32,7 +32,8 @@ Nota: Verificar que el archivo de logs se haya creado.
 import logging
 logging.basicConfig(
     level=logging.DEBUG,
-    filename='production.log'    
+    filename='production.log',
+    force=True
 )
 
 def count_letters(names: list) -> None:
