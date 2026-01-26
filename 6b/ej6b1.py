@@ -30,6 +30,7 @@ Nota: Verificar que el archivo de logs se haya creado.
 
 """
 import logging
+
 logging.basicConfig(
     level=logging.DEBUG,
     filename='production.log',
